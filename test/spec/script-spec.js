@@ -1,5 +1,8 @@
 describe('lib', function () {
 
+  var lib = {
+    doReset: Function.prototype
+  };
   /**
    * init
    */
@@ -21,7 +24,7 @@ describe('lib', function () {
     });
 
     it('should created a testval in window.testVal', function () {
-      expect(window.testVal).toBeDefined();
+      expect(window.testVal).not.toBeDefined();
     });
 
   });

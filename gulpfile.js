@@ -1,7 +1,7 @@
 var gulp    = require('gulp'),
-    karma   = require('gulp-karma'),
+    karma   = require('karma').server,
     jshint  = require('gulp-jshint'),
-    stylish = require('jshint-stylish'),
+    //stylish = require('jshint-stylish'), // it is not used
     header  = require('gulp-header'),
     uglify  = require('gulp-uglify'),
     plumber = require('gulp-plumber'),
@@ -15,7 +15,7 @@ var paths = {
     'src/script.js'
   ],
   test: [
-    'test/spec/**/*.spec.js'
+    'test/spec/*spec.js'
   ]
 };
 
@@ -50,14 +50,15 @@ gulp.task('lint', function () {
 gulp.task('clean', function () {
   return gulp.src(paths.output, { read: false })
     .pipe(plumber())
-    .pipe(rimraf()); // "new" gulp clean
+    .pipe(rimraf()); // "new" gulp clean (and now it's just del)
 });
 
-gulp.task('test', function() {
-  return gulp.src(paths.scripts.concat(paths.test))
-    .pipe(plumber())
-    .pipe(karma({ configFile: 'test/karma.conf.js' }))
-    .on('error', function(err) { throw err; });
+gulp.task('test', function(done) {
+  karma.start({
+    configFile: __dirname + '/test/karma.conf.js',
+    files: paths.scripts.concat(paths.test),
+    singleRun: true
+  }, done);
 });
 
 gulp.task('default', [

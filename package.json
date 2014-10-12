@@ -1,23 +1,22 @@
 {
-  "name": "javascript-project",
+  "name": "javascript-boilerplate",
   "version": "0.0.1",
-  "description": "Javascript Project",
+  "description": "Javascript Boilerplate",
   "author": "Pascal Weiland",
   "license": "MIT",
-  "homepage": "https://github.com/weiland/script",
+  "homepage": "https://github.com/weiland/javascript-boilerplate",
   "devDependencies": {
-    "gulp": "~3.7.0",
+    "gulp": "^3.8.8",
     "gulp-header": "^1.0.2",
     "gulp-jshint": "^1.6.1",
-    "gulp-karma": "0.0.4",
     "gulp-plumber": "~0.6.2",
-    "gulp-uglify": "~0.3.0",
-    "gulp-rename": "~1.1.0",
+    "gulp-rename": "^1.1.0",
     "gulp-rimraf": "^0.1.0",
+    "gulp-uglify": "^0.3.0",
     "jshint-stylish": "^0.2.0",
-    "karma": "^0.12.16",
-    "karma-jasmine": "~0.2.0",
+    "karma": "^0.12.24",
+    "karma-jasmine": "^0.2.0",
     "karma-phantomjs-launcher": "^0.1.4",
-    "karma-spec-reporter": "0.0.13"
+    "karma-spec-reporter": "^0.0.13"
   }
 }
